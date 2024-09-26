@@ -23,7 +23,7 @@ export default function App() {
   }, [text])
 
   
-  const CountryCard = {
+  const countryCard = {
     width: "200px",
     border: "1px solid #ccc",
     borderRadius: "10px",
@@ -60,7 +60,7 @@ export default function App() {
       />
       <div style={containerStyle}>
         {countries.map((country) => (
-          <div key={country.ccn3} style={CountryCard}>
+          <div key={country.ccn3} style={countryCard}>
             <img
               src={country.flags.png}
               alt={`Flag of ${country.name.common}`}
