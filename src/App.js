@@ -20,7 +20,7 @@ export default function App() {
   if(text !=="")
      {let filteredCountries = countries.filter((item) => item.name.common.toLowerCase().includes(text.toLowerCase()));
     setCountries(filteredCountries);}
-  }, [text])
+  }, [text, countries])
 
   
   const countryCard = {
