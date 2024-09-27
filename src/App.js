@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export default function App() {
   const [countries, setCountries] = useState([]);
   const [text, setText] = useState("");
-
  
   const performAPICall =  () => {
     fetch("https://restcountries.com/v3.1/all")
@@ -20,36 +19,11 @@ export default function App() {
   if(text !=="")
      {let filteredCountries = countries.filter((item) => item.name.common.toLowerCase().includes(text.toLowerCase()));
     setCountries(filteredCountries);}
-  }, [text, countries])
+  }, [text, countries]);
 
   
-  const countryCard1 = {
-    width: "200px",
-    border: "1px solid #ccc",
-    borderRadius: "10px",
-    margin: "10px",
-    padding: "10px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  };
 
-  const countryCard = {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-  };
-
-  const imageStyle = {
-    width: "100px",
-    height: "100px",
-  };
-
- 
-
+  
   return (
     <div>
       <input
@@ -58,13 +32,13 @@ export default function App() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Search for countries.."
       />
-      <div style={countryCard}>
+      <div className = "containerCard">
         {countries.map((country) => (
-          <div  key={country.ccn3} style={countryCard1}>
+          <div  key={country.ccn3} className ="countryCard">
             <img
               src={country.flags.png}
               alt={`Flag of ${country.name.common}`}
-              style={imageStyle}
+              className = "imageStyle"
             />
             <h2>{country.name.common}</h2>
           </div>
