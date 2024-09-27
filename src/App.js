@@ -35,7 +35,7 @@ export default function App() {
     justifyContent: "center",
   };
 
-  const containerStyle = {
+  const containerCard = {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
@@ -58,7 +58,7 @@ export default function App() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Search for countries.."
       />
-      <div style={containerStyle}>
+      <div style={containerCard}>
         {countries.map((country) => (
           <div key={country.ccn3} style={countryCard}>
             <img
