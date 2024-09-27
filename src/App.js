@@ -23,7 +23,7 @@ export default function App() {
   }, [text, countries])
 
   
-  const countryCard = {
+  const countryCard1 = {
     width: "200px",
     border: "1px solid #ccc",
     borderRadius: "10px",
@@ -35,7 +35,7 @@ export default function App() {
     justifyContent: "center",
   };
 
-  const containerCard = {
+  const countryCard = {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
@@ -58,9 +58,9 @@ export default function App() {
         onChange={(e) => setText(e.target.value)}
         placeholder="Search for countries.."
       />
-      <div style={containerCard}>
+      <div style={countryCard}>
         {countries.map((country) => (
-          <div id = "countryCard" key={country.ccn3} style={countryCard}>
+          <div  key={country.ccn3} style={countryCard1}>
             <img
               src={country.flags.png}
               alt={`Flag of ${country.name.common}`}
